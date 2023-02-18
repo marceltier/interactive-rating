@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main>
+    
+      <!-- Rating state start -->
+    
+      <article class="card">
+        <div class="card__container">
+        <picture class="card__icon">
+          <img src="images/icon-star.svg" alt="">
+        </picture>
+        <h1>How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request. All feedback is appreciated
+          to help us improve our offering!
+        </p>
+        <div class="card__rating" data-rate="">
+          <span>
+            <input type="radio" name="rating" id="option-1" autocomplete="off">
+            <label for="option-1">1</label>
+          </span>
+        
+          <span>
+            <input type="radio" name="rating" id="option-2" autocomplete="off">
+            <label for="option-2">2</label>
+          </span>
+        
+          <span>
+            <input type="radio" name="rating" id="option-3" autocomplete="off">
+            <label for="option-3">3</label>
+          </span>
+        
+          <span>
+            <input type="radio" name="rating" id="option-4" autocomplete="off">
+            <label for="option-4">4</label>
+          </span>
+        
+          <span>
+            <input type="radio" name="rating" id="option-5" autocomplete="off">
+            <label for="option-5">5</label>
+          </span>
+        </div>
+        <button class="card__button">Submit</button>
+      </div>
+      </article>
+    
+      <!-- Rating state end -->
+        
+    </main>
+</body>
+</html>

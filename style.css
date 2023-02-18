@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --primary-orange: hsl(25, 97%, 53%);
+    --primary-orange-transparent: hsl(25 97% 53% / .7);
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-light-grey: hsl(217, 12%, 63%);
+    --neutral-medium-grey: hsl(216, 12%, 54%);
+    --neutral-medium-grey-transparent: hsl(216 12% 54% / .1);
+    --neutral-dark-blue: hsl(213, 19%, 18%);
+    --neutral-dark-blue-transparent: hsl(213 19% 18% / .3);
+    --very-dark-blue: hsl(216, 12%, 8%);
+    --font-size: 15px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: var(--font-size);
+}
+body {
+    font-family: 'Overpass', sans-serif;
+    background: var(--very-dark-blue);
+    color: var(--neutral-white);
+    display: grid;
+    place-items: center;
+    gap: 4rem;
+    min-height: 100vh;
+}
+button {
+    font-family: 'Overpass', sans-serif;
+    border: 0;
+}
+
+main {
+    padding: 1rem;
+}
+.card {
+    background: radial-gradient(circle at top, var(--neutral-dark-blue), var(--neutral-dark-blue-transparent));
+    border-radius: 2rem;
+    width: 27rem;
+    padding: 2rem;
+}
+.card__container {
+    display: grid;
+    gap: 1rem;
+}
+
+.card--success {
+    text-align: center;
+    padding-block: 1rem;
+}
+.card .card__icon {
+    background: var(--neutral-medium-grey-transparent);
+    width: max-content;
+    aspect-ratio: 1;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.5rem;
+}
+.card h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+.card p {
+    color: var(--neutral-medium-grey);
+    font-weight: 400;
+    line-height: 1.6;
+}
+.card .card__rating {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-block: 1rem;
+}
+.card .card__rating span {
+    position: relative;
+}
+.card .card__rating input[type="radio"] {
+    clip: rect(0,0,0,0);
+    position: absolute;
+    pointer-events: none;
+}
+
+.card .card__rating label {
+    display: grid;
+    place-items: center;
+    height: 50px;
+    aspect-ratio: 1;
+    font-weight: 700;
+    background-color: var(--neutral-medium-grey-transparent);
+    color: var(--neutral-medium-grey);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.card .card__rating label:hover {
+    background-color: var(--primary-orange);
+    color: var(--neutral-white);
+    transition: all .3s ease-in-out;
+}
+.card .card__rating input[type="radio"]:checked + label {
+    background: var(--neutral-light-grey);
+    color: var(--neutral-white);
+    transition: all .3s ease-in-out;
+}
+.card__button {
+    background: var(--primary-orange);
+    color: var(--neutral-white);
+    padding: 1rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: all .3s ease-in-out;
+}
+.card__button:disabled {
+    opacity: .2;
+    cursor: not-allowed;
+}
+.card__button:not(:disabled):hover {
+    background: var(--neutral-white);
+    color: var(--primary-orange);
+}
+.card__badge {
+    background: var(--neutral-medium-grey-transparent);
+    color: var(--primary-orange-transparent);
+    width: max-content;
+    margin: .5rem auto 1.5rem;
+    padding: .5rem 1.25rem;
+    border-radius: 1rem;
+    line-height: 1.2;
+}
+
+.hide-animation {
+    animation: hideAnimation .3s;
+
+}
+@keyframes hideAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+}
+
+.show-animation {
+    animation: showAnimation .3s forwards;
+}
+
+@keyframes showAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-danger {
+    border: 1px solid var(--primary-orange);
+    color: var(--primary-orange);
+    padding: 1rem;
+    font-size: 90%;
+    text-align: center;
+}
