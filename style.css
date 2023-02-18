@@ -44,7 +44,7 @@ main {
 .card {
     background: radial-gradient(circle at top, var(--neutral-dark-blue), var(--neutral-dark-blue-transparent));
     border-radius: 2rem;
-    width: 27rem;
+    max-width: 27rem;
     padding: 2rem;
 }
 .card__container {
